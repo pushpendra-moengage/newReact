@@ -7,22 +7,14 @@ pluginManagement {
         maven { url 'https://developer.huawei.com/repo/' }
     }
 }
-rootProject.name = 'newReact'
-apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
-include ':app'
-includeBuild('../node_modules/@react-native/gradle-plugin')
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     // add the below in your project.
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
-        maven { url 'https://developer.huawei.com/repo/' }
         mavenCentral()
-    }
-    repositories {
         maven { url 'https://developer.huawei.com/repo/' }
-        mavenCentral()
     }
     versionCatalogs {
         create("moengage") {
@@ -30,3 +22,7 @@ dependencyResolutionManagement {
         }
     }
 }
+rootProject.name = 'newReact'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+includeBuild('../node_modules/@react-native/gradle-plugin')
